@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <gravity>0 0 -9.8</gravity>
+    <physics type="ode" default="true">
+      <ode>
+        <solver>
+          <type>world</type>
+          <iters>100</iters>
+        </solver>
+        <constraints>
+          <cfm>1</cfm>
+          <erp>0.8</erp>
+        </constraints>
+      </ode>
+    </physics>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://Large_Gear_Vessel</uri>
+    </include>
+
+    <include>
+      <uri>model://Large_Gear</uri>
+      <pose>0 0.055 0.02 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

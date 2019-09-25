@@ -5,7 +5,7 @@
     <physics type="ode" default="true">
       <ode>
         <solver>
-          <type>world</type>
+          <type>quick</type>
           <iters>100</iters>
         </solver>
         <constraints>

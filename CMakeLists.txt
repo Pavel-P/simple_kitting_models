@@ -20,3 +20,16 @@ catkin_package(
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
+
+include_directories(
+  include ${catkin_INCLUDE_DIRS}${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
+list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+
+add_library(SimplifiedContactPlugin
+    src/SimplifiedContactPlugin.cc
+)
+add_dependencies(SimplifiedContactPlugin ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(SimplifiedContactPlugin
+  ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES}
+)

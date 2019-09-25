@@ -184,7 +184,7 @@ void SimplifiedContact::OnUpdate()
 
       if (relativeLinearVel.Length() < this->attachThreshold && !externalCollision->GetModel()->IsStatic())
       {
-        gzdbg << "Relative Vel is: " << relativeLinearVel << ", creating joint." << std::endl;
+        // gzdbg << "Relative Vel is: " << relativeLinearVel << ", creating joint." << std::endl;
 
         auto contactForce = ignition::math::Vector3d();
         
